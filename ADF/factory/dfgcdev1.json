@@ -1,0 +1,9 @@
+{
+	"name": "dfgcdev1",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "5867dda9-292d-40a1-8ed4-96f6a3df5cb9",
+		"tenantId": "c6259f2e-86a0-426b-95e0-6ce33cae175f"
+	}
+}

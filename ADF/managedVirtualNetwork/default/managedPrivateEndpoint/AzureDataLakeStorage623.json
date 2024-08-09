@@ -1,0 +1,7 @@
+{
+	"name": "AzureDataLakeStorage623",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/58e6ff39-c5ee-462a-836d-5cb6c4453837/resourceGroups/rg_gc_src_1/providers/Microsoft.Storage/storageAccounts/sacgcsrc1",
+		"groupId": "dfs"
+	}
+}

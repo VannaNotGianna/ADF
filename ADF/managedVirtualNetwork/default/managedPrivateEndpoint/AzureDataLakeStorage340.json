@@ -1,0 +1,10 @@
+{
+	"name": "AzureDataLakeStorage340",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/58e6ff39-c5ee-462a-836d-5cb6c4453837/resourceGroups/rg_gc_dev_1/providers/Microsoft.Storage/storageAccounts/sagcdatalakesrc",
+		"groupId": "dfs",
+		"fqdns": [
+			"sagcdatalakesrc.dfs.core.windows.net"
+		]
+	}
+}
