@@ -4,6 +4,7 @@
 		"activities": [
 			{
 				"name": "Lookup_metadata",
+				"description": "This is a lookup metadata",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
