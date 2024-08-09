@@ -1,0 +1,53 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "dfgcdev1"
+		},
+		"AzureDataLakeStorage_dev_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage_sink_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage_dev_properties_typeProperties_url": {
+			"value": "https://sagcdatalakesrc.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage_sink_properties_typeProperties_url": {
+			"value": "https://sagcdatalakesrcsrc.dfs.core.windows.net/"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://kvgcdev1.vault.azure.net/"
+		},
+		"AzureSqlDatabasesrc_properties_typeProperties_server": {
+			"value": "servergcsrc1.database.windows.net"
+		},
+		"AzureSqlDatabasesrc_properties_typeProperties_database": {
+			"value": "sqldbgcsrc1"
+		},
+		"AzureSqlDatabasesrc_properties_typeProperties_userName": {
+			"value": "geekcoders_admin"
+		},
+		"RestServicesrc_properties_typeProperties_url": {
+			"value": "https://airlabs.co/api/v9/airlines"
+		},
+		"AzureDataLakeStorage340_properties_privateLinkResourceId": {
+			"value": "/subscriptions/58e6ff39-c5ee-462a-836d-5cb6c4453837/resourceGroups/rg_gc_dev_1/providers/Microsoft.Storage/storageAccounts/sagcdatalakesrc"
+		},
+		"AzureDataLakeStorage340_properties_groupId": {
+			"value": "dfs"
+		},
+		"AzureDataLakeStorage340_properties_fqdns": {
+			"value": [
+				"sagcdatalakesrc.dfs.core.windows.net"
+			]
+		},
+		"AzureDataLakeStorage623_properties_privateLinkResourceId": {
+			"value": "/subscriptions/58e6ff39-c5ee-462a-836d-5cb6c4453837/resourceGroups/rg_gc_src_1/providers/Microsoft.Storage/storageAccounts/sacgcsrc1"
+		},
+		"AzureDataLakeStorage623_properties_groupId": {
+			"value": "dfs"
+		}
+	}
+}

@@ -1,0 +1,162 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "dfgcdev1"
+		},
+		"AzureDataLakeStorage_dev_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage_dev'"
+		},
+		"AzureDataLakeStorage_sink_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage_sink'"
+		},
+		"AzureDataLakeStorage_dev_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://sagcdatalakesrc.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage_sink_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://sagcdatalakesrcsrc.dfs.core.windows.net/"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://kvgcdev1.vault.azure.net/"
+		},
+		"AzureSqlDatabasesrc_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "servergcsrc1.database.windows.net"
+		},
+		"AzureSqlDatabasesrc_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sqldbgcsrc1"
+		},
+		"AzureSqlDatabasesrc_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "geekcoders_admin"
+		},
+		"RestServicesrc_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://airlabs.co/api/v9/airlines"
+		},
+		"AzureDataLakeStorage340_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/58e6ff39-c5ee-462a-836d-5cb6c4453837/resourceGroups/rg_gc_dev_1/providers/Microsoft.Storage/storageAccounts/sagcdatalakesrc"
+		},
+		"AzureDataLakeStorage340_properties_groupId": {
+			"type": "string",
+			"defaultValue": "dfs"
+		},
+		"AzureDataLakeStorage340_properties_fqdns": {
+			"type": "array",
+			"defaultValue": [
+				"sagcdatalakesrc.dfs.core.windows.net"
+			]
+		},
+		"AzureDataLakeStorage623_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/58e6ff39-c5ee-462a-836d-5cb6c4453837/resourceGroups/rg_gc_src_1/providers/Microsoft.Storage/storageAccounts/sacgcsrc1"
+		},
+		"AzureDataLakeStorage623_properties_groupId": {
+			"type": "string",
+			"defaultValue": "dfs"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "dfgcdev1_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureDataLakeStorage_dev_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage_dev_accountKey')]"
+					},
+					"AzureDataLakeStorage_sink_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage_sink_accountKey')]"
+					},
+					"AzureDataLakeStorage_dev_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage_dev_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage_sink_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage_sink_properties_typeProperties_url')]"
+					},
+					"AzureKeyVault1_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
+					},
+					"RestServicesrc_properties_typeProperties_url": {
+						"value": "[parameters('RestServicesrc_properties_typeProperties_url')]"
+					},
+					"AzureSqlDatabasesrc_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabasesrc_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabasesrc_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabasesrc_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabasesrc_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabasesrc_properties_typeProperties_userName')]"
+					},
+					"AzureDataLakeStorage340_properties_privateLinkResourceId": {
+						"value": "[parameters('AzureDataLakeStorage340_properties_privateLinkResourceId')]"
+					},
+					"AzureDataLakeStorage340_properties_groupId": {
+						"value": "[parameters('AzureDataLakeStorage340_properties_groupId')]"
+					},
+					"AzureDataLakeStorage340_properties_fqdns": {
+						"value": "[parameters('AzureDataLakeStorage340_properties_fqdns')]"
+					},
+					"AzureDataLakeStorage623_properties_privateLinkResourceId": {
+						"value": "[parameters('AzureDataLakeStorage623_properties_privateLinkResourceId')]"
+					},
+					"AzureDataLakeStorage623_properties_groupId": {
+						"value": "[parameters('AzureDataLakeStorage623_properties_groupId')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "dfgcdev1_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'dfgcdev1_ArmTemplate_0')]"
+			]
+		}
+	]
+}
